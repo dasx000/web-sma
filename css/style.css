@@ -1,0 +1,935 @@
+@import "./fonts.css";
+@import "./partials/variables.css";
+@import "./partials/global.css";
+@import "./animations.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none !important;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    font-family: var(--poppins);
+    font-size: 16px;
+    font-weight: 400;
+    background-color: white;
+    line-height: 1.5;
+
+}
+
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+
+
+/*========= start navbar =======*/
+.navbar {
+    background-color: transparent;
+    padding: 10px 0;
+    transition: all 0.5s ease;
+}
+
+.navbar-shrink {
+    background-color: var(--main-color);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.navbar .container {
+    padding: 0px 15px;
+}
+
+.navbar .navbar-brand {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.navbar .navbar-nav .nav-item {
+    margin-left: 30px;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    padding: 5px 0;
+    position: relative;
+}
+
+.navbar .navbar-nav .nav-item .nav-link::before {
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transition: all .3s ease;
+    transform: scale(0);
+    height: 2px;
+    background-color: #ffffff;
+}
+
+.navbar .navbar-nav .nav-item .active::before,
+.navbar .navbar-nav .nav-item .nav-link:hover::before {
+
+    transform: scale(1);
+}
+
+
+/*========= end navbar =======*/
+
+/*========= start home =======*/
+.home {
+    min-height: 100vh;
+    padding: 150px 0;
+    border-radius: 0 0 200px 0;
+    position: relative;
+    z-index: 1;
+    background-color: var(--main-to-dark-color);
+}
+
+
+.home .home-text {
+    padding-bottom: 2rem;
+}
+
+.home .home-img img {
+    max-width: 250px;
+    width: 100%;
+    box-shadow: var(--shadow-black-300);
+    border-radius: 30px;
+    animation: bounceTop_01 5s ease infinite;
+}
+
+.home .home-btn {
+    margin-top: 40px;
+}
+
+
+
+.home .home-btn .video-play-btn {
+    margin-left: 30px;
+    font-size: 16px;
+    animation: pulse_01 2s ease infinite;
+
+}
+
+.home .home-btn .video-play-btn:hover {
+    box-shadow: var(--shadow-black-300);
+    animation: none;
+
+}
+
+
+.home .home-img {
+    position: relative;
+}
+
+.home .home-img .circle {
+    position: absolute;
+    z-index: 1;
+    height: 400px;
+    width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.home .home-img .circle::before {
+    content: '';
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    top: 30px;
+    left: 30px;
+    transform-origin: 170px 170px;
+    animation: spin_01 10s linear infinite;
+}
+
+
+/* animation */
+.effect-wrap .effect {
+    position: absolute;
+    z-index: -1;
+}
+
+.effect-wrap .effect-1 {
+    left: 20%;
+    top: 15%;
+    font-size: 20px;
+    color: var(--color-2);
+    animation: spin_01 5s linear infinite;
+}
+
+.effect-wrap .effect-2 {
+    right: 5%;
+    top: 10%;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    animation: spin_01 5s linear infinite;
+}
+
+.effect-wrap .effect-3 {
+    left: 35%;
+    bottom: 35%;
+    font-size: 25px;
+    color: var(--color-3);
+    animation: bounceTop_01 5s linear infinite;
+}
+
+
+/*========= end home =======*/
+
+
+/*========= start features section =======*/
+.section-title {
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    color: var(--black-900);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.section-title h2 span {
+    color: var(--main-color);
+}
+
+.features .feature-item {
+    box-shadow: var(--shadow-black-100);
+    margin: 15px;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.features .feature-item::before,
+.features .feature-item::after {
+    content: '';
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    border-radius: 50%;
+    transition: all 1s ease;
+}
+
+.features .feature-item::before {
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-1);
+    right: 15px;
+    bottom: -50px;
+
+}
+
+.features .feature-item::after {
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-2);
+    left: -10px;
+    top: 90px;
+
+}
+
+.features .feature-item:hover::before {
+    opacity: 1;
+    bottom: 50px;
+}
+
+.features .feature-item:hover::after {
+    opacity: 1;
+    left: 20px;
+}
+
+.features .feature-item h3 {
+    color: var(--black-900);
+    margin: 0 0 20px;
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.features .feature-item p {
+    color: var(--black-400);
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0 0 30px;
+}
+
+.features .feature-item .icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 30px;
+    text-align: center;
+    color: var(--main-color);
+    font-size: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.features .feature-item .icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    transition: all 1s ease;
+    opacity: 0;
+
+}
+
+.features .feature-item:hover .icon::before {
+    right: 0;
+    border-radius: 50%;
+    opacity: 1;
+    z-index: -1;
+}
+
+.features .feature-item:hover .icon {
+    color: white;
+    font-size: 20px;
+}
+
+.features .feature-item .icon i {
+
+    line-height: 50px;
+}
+
+/*========= end features section  =======*/
+
+/*===========================
+Start Fun-facts section
+==============================*/
+.fun-facts .fun-facts-img img {
+    max-width: 250px;
+    width: 100%;
+    box-shadow: var(--shadow-black-300);
+    border-radius: 30px;
+    animation: bounceTop_01 4s ease infinite;
+}
+
+
+.fun-facts .section-title {
+    margin-bottom: 20px;
+}
+
+/* .fun-facts .section-title h2 {
+    text-align: left;
+} */
+
+.fun-facts .fun-facts-text p {
+    margin: 0 0 20px;
+}
+
+.fun-fact-item span {
+    text-transform: capitalize;
+    font-weight: 500;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.fun-fact-item h3 {
+    color: white;
+    margin: 0 0 10px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+
+.fun-fact-item {
+    box-shadow: var(--shadow-black-100);
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.fun-fact-item.style-1 {
+    background-color: var(--color-1);
+}
+
+.fun-fact-item.style-2 {
+    background-color: var(--color-2);
+}
+
+.fun-fact-item.style-3 {
+    background-color: var(--color-3);
+}
+
+.fun-fact-item.style-4 {
+    background-color: var(--main-color);
+}
+
+/*===========================
+End Fun-facts section
+==============================*/
+
+
+/*===========================
+Start app-screeshots section
+==============================*/
+.app-screenshot .section-title {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.screenshots-carousel .screenshot-item {
+    padding: 20px;
+
+}
+
+.screenshots-carousel .screenshot-item {
+
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+
+}
+
+/*===========================
+end app-screeshots section
+==============================*/
+
+/*===========================
+Start app-download section
+==============================*/
+.app-download .section-title {
+    margin: 40px 0;
+}
+
+.app-download .app-download-item {
+    box-shadow: var(--shadow-black-100);
+    padding: 30px;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.app-download .app-download-item i {
+    font-size: 30px;
+    color: var(--main-color);
+    display: inline-block;
+}
+
+.app-download .app-download-item h3 {
+    font-size: 22px;
+    color: var(--black-900);
+    font-weight: 600;
+    margin: 20px 0;
+    text-transform: capitalize;
+}
+
+.app-download .app-download-item p {
+    margin-bottom: 30px;
+}
+
+
+/*===========================
+end app-download section
+==============================*/
+
+
+/*===========================
+start how-it-works section
+==============================*/
+.how-it-works-item {
+    text-align: center;
+    /* box-shadow: var(--shadow-black-100); */
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.how-it-works-item.line-right::before {
+    content: "";
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    background-color: var(--main-color);
+}
+
+.how-it-works-item .step {
+    display: inline-block;
+    width: 60px;
+    font-weight: 600;
+    height: 60px;
+    color: white;
+    line-height: 60px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+}
+
+/*===========================
+end how-it-works section
+==============================*/
+
+
+/*===========================
+start testimonials section
+==============================*/
+
+
+.testimonial-item .img-box {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.testimonial-item .img-box {
+
+    border-radius: 50%;
+    border: 5px solid var(--main-color);
+    position: relative;
+}
+
+.testimonial-item .img-box img {
+
+    border-radius: 50%;
+
+}
+
+.testimonial-item .img-box i {
+    position: absolute;
+    color: white;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+    left: calc(100% - 15px);
+    top: calc(50% - 15px);
+}
+
+.testimonials-carousel .testimonial-item {
+    margin: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-black-100);
+    border-radius: 20px;
+}
+
+.testimonial-item h2 {
+    font-size: 27px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: var(--black-900);
+    text-transform: capitalize;
+}
+
+
+.testimonial-item span {
+    font-size: 16px;
+    display: block;
+    font-weight: 300;
+    color: rgb(139, 139, 139);
+}
+
+.testimonial-item .rating i {
+    color: var(--color-2);
+    font-size: 16px;
+    display: inline-block;
+}
+
+/*===========================
+end testimonials section
+==============================*/
+
+
+/*===========================
+start pricing section
+==============================*/
+.pricing .pricing-plan {
+    box-shadow: var(--shadow-black-100);
+    border-radius: 20px;
+    margin: 10px 10px 40px;
+    transition: all 1s ease;
+}
+
+.pricing .pricing-plan:hover {
+    box-shadow: var(--shadow-black-300);
+    transform: scale(1.1);
+
+}
+
+.pricing .pricing-plan .pricing-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--black-alpha-100)
+}
+
+.pricing .pricing-plan .pricing-header h3 {
+    text-align: center;
+    font-size: 30px;
+    color: var(--black-900);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.pricing .pricing-plan .pricing-price {
+
+    padding: 40px 30px;
+    display: flex;
+    justify-content: center;
+    line-height: .7;
+}
+
+.pricing .pricing-plan .pricing-price .price {
+    font-size: 80px;
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+.pricing .pricing-plan .pricing-price .currency {
+    font-size: 16px;
+    color: var(--black-400);
+    font-weight: 300;
+    align-self: flex-start;
+    margin-right: 5px;
+}
+
+.pricing .pricing-plan .pricing-price .priode {
+    font-size: 14px;
+    color: var(--black-400);
+    font-weight: 300;
+    align-self: flex-end;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+
+.pricing .pricing-plan .pricing-body {
+    padding: 0 30px;
+}
+
+.pricing .pricing-plan .pricing-body ul li {
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: capitalize;
+    color: var(--black-400);
+    padding: 6px 0;
+    line-height: 26px;
+    border-bottom: 1px solid var(--black-alpha-100);
+}
+
+.pricing .pricing-plan .pricing-body ul li i {
+    color: var(--main-color);
+    margin-right: 10px;
+}
+
+.pricing .pricing-plan .pricing-footer {
+    padding: 20px 30px 30px;
+    text-align: center;
+}
+
+/*===========================
+end pricing section
+==============================*/
+
+
+/*===========================
+start team section
+==============================*/
+.team-item {
+    border-radius: 10px;
+    margin: 15px;
+    padding: 30px;
+    box-shadow: var(--shadow-black-100);
+}
+
+.team-item span {
+    font-size: 16px;
+    display: block;
+    font-weight: 300;
+    color: var(--black-400);
+    text-transform: capitalize;
+}
+
+.team-item h3 {
+    margin: 15px 0 0;
+}
+
+/*===========================
+end team section
+==============================*/
+
+
+/*===========================
+start faq section
+==============================*/
+.faq .accordion-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+
+.faq .accordion-header {
+    box-shadow: var(--shadow-black-100);
+    padding: 20px 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.faq .accordion-header::before {
+    content: '\f067';
+    font-weight: 900;
+    position: absolute;
+    font-family: 'Font Awesome 5 Free';
+    height: 30px;
+    width: 30px;
+    right: 10px;
+    top: 50%;
+    color: var(--black-900);
+    /* background-color: red; */
+    transform: translateY(-50%);
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.faq .accordion-header:not(.collapsed)::before {
+    content: '\f068';
+    color: var(--black-900);
+}
+
+.faq .accordion-header:not(.collapsed) {
+    background-color: var(--main-color);
+    box-shadow: none;
+}
+
+.faq .accordion-header:not(.collapsed) h3 {
+    color: white;
+}
+
+.faq .accordion-header h3 {
+    font-size: 18px;
+    color: var(--black-900);
+    font-weight: 500;
+    margin: 0;
+}
+
+.faq .accordion-body {
+    border-radius: 5px;
+    padding: 20px;
+    background-color: var(--black-100);
+}
+
+.faq .accordion-body p {
+    color: var(--black-400);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26px;
+    margin: 0;
+}
+
+/*===========================
+end faq section
+==============================*/
+
+
+/*===========================
+start contact section
+==============================*/
+.contact-info h3 {
+    font-size: 22px;
+    color: var(--black-900);
+    font-weight: 700;
+    margin: 0 0 40px;
+}
+
+.contact-info-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 55px;
+}
+
+.contact-info-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black-400);
+    margin: 0 0 5px;
+}
+
+
+.contact-info-item i {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: var(--main-color);
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid var(--main-color);
+}
+
+.contact-info-item p {
+
+    font-size: 16px;
+    color: var(--black-400);
+    font-weight: 300;
+    margin: 0;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form .form-control {
+    border-radius: 20px;
+    height: 50px;
+    padding: 0 20px;
+    color: var(--black-900);
+    background-color: var(--black-000);
+    transition: all 0.5s ease;
+    border: 1px solid transparent;
+    box-shadow: var(--shadow-black-100);
+}
+
+.contact-form textarea.form-control {
+    padding-top: 12px;
+    height: 100px;
+    resize: none;
+}
+
+.contact-form .form-control:focus {
+    border: 1px solid var(--main-color);
+}
+
+/*===========================
+end contact section
+==============================*/
+
+
+/*===========================
+start footer section
+==============================*/
+footer {
+    padding: 50px 0 0;
+
+    background-color: var(--main-color);
+}
+
+footer h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 25px;
+}
+
+.footer-col {
+    margin-bottom: 40px;
+}
+
+.footer-col p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-col ul {
+    margin: 0;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-weight: 300;
+    font-size: 16px;
+    display: block;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all .5s ease;
+    text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+    margin-left: 15px;
+}
+
+footer .copyright-text {
+    font-size: 16px;
+    padding: 20px 0;
+    font-weight: 300;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+    margin: 50px 0 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/*===========================
+end footer section
+==============================*/
+
+
+/*===========================
+start togle section
+==============================*/
+.togle-theme {
+    position: fixed;
+    right: 1%;
+    top: calc(95% - 30px);
+    height: 35px;
+    width: 35px;
+    background-color: var(--dark-to-main-color);
+    z-index: 1000;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    box-shadow: var(--shadow-black-300);
+}
+
+.togle-theme i {
+    line-height: 35px;
+}
+
+body.dark {
+    background-color: var(--bg-dark);
+    --main-to-dark-color: var(--bg-dark);
+    --dark-to-main-color: var(--main-color);
+    --shadow-black-100: var(--shadow-black-300);
+    --black-900: #ffffff;
+    --black-400: #bbbbbb;
+    --black-100: var(--bg-dark);
+    --black-000: var(--bg-dark);
+    --black-alpha-100: rgba(255, 255, 255, 0.05);
+}
+
+/*===========================
+end togle section
+==============================*/
