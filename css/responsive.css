@@ -17,6 +17,15 @@
   }
 
   /* end owl carousel */
+
+  /* text faq */
+  .faq .accordion-header h3 {
+    font-size: 14px;
+  }
+
+  .faq .accordion-body p {
+    font-size: 14px;
+  }
 }
 
 /* @media only screen and (max-width: 800px) {} */

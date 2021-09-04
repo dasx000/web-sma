@@ -692,9 +692,10 @@ start faq section
 
 
 .faq .accordion-header {
-    box-shadow: var(--shadow-black-100);
-    padding: 20px 20px;
+    box-shadow: var(--shadow-black-300);
+    padding: 20px 30px;
     border-radius: 5px;
+    background-color: var(--black-000);
     position: relative;
 }
 

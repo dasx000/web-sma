@@ -1,3 +1,6 @@
+//   AOS.init();
+
+
 $(document).ready(function () {
 
     $(window).on('scroll', function () {
@@ -113,4 +116,23 @@ $(document).ready(function () {
             $('.togle-theme i').addClass('fa-moon')
         }
     })
+
+
+    //  ============ AOS =================
+
+    $('.section-padding').attr('data-aos', 'fade-up')
+    AOS.init({
+        offset: 400,
+        once: true,
+        duration: 1000,
+        delay: 100,
+    })
 })
+
+// ========== TYPED.JS ================= //
+var typed2 = new Typed('#typing', {
+    strings: ['For Your Business'],
+    typeSpeed: 100,
+    backSpeed: 50,
+    loop: true
+});
