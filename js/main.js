@@ -96,7 +96,7 @@ $(document).ready(function () {
 
     // ========= scroll it =========================//
     $.scrollIt({
-        topOffset: -120
+        topOffset: -150
     });
 
 })
