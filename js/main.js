@@ -1,8 +1,8 @@
-//   AOS.init();
-
+// //   AOS.init();
 
 $(document).ready(function () {
 
+    // NAVBAR ON SCROLL
     $(window).on('scroll', function () {
         if ($(this).scrollTop() > 90) {
             $('.navbar').addClass('navbar-shrink');
@@ -11,8 +11,27 @@ $(document).ready(function () {
         }
     });
 
-    // owl-carousel 
-    $('.features-carousel').owlCarousel({
+    // VIDEO POPUP 1
+    const videoSrc = $('#player-1').attr('src')
+    $('.video-area .btn-play, .video-popup').on('click', () => {
+
+        if ($('.video-popup').hasClass('open')) {
+            $('.video-popup').removeClass('open')
+            $('#player-1').attr('src', '')
+
+        } else {
+            $('.video-popup').addClass('open')
+            if ($('#player-1').attr('src') == '') {
+                $('#player-1').attr('src', videoSrc)
+            }
+        }
+
+    })
+
+
+
+    // alumni carousel
+    $('.alumni-carousel').owlCarousel({
         loop: true,
         margin: 0,
         autoplay: true,
@@ -22,80 +41,39 @@ $(document).ready(function () {
             0: {
                 items: 1
             },
-            600: {
+            544: {
                 items: 2
-            },
-            1000: {
-                items: 3
             }
         }
     })
 
+    // galeri filter
+    let btns = $('.galeri-area .button-group button')
+    btns.click((e) => {
+        $('.project-area .button-group button').removeClass('btn-active')
+        e.target.classList.add('btn-active')
 
-    // owl-carousel app-screenshots 
-    $('.screenshots-carousel').owlCarousel({
-        loop: true,
-        margin: 0,
-        autoplay: true,
-        // dots: true,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 4
-            }
-        }
+        let selector = $(e.target).attr('data-filter')
+        // console.log(selector)
+        $('.galeri-area .grid').isotope({
+
+            filter: selector
+
+        })
+        return false;
+
     })
 
-
-    // testimonials carousel
-    $('.testimonials-carousel').owlCarousel({
-        loop: true,
-        margin: 0,
-        autoplay: true,
-        // dots: true,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 3
-            }
+    // Galery swipe
+    // $('.project-area .button-group #btn1').trigger('click')
+    $('.galeri-area .galeri-foto-items .our-galeri .test-popup-link').magnificPopup({
+        type: 'image',
+        // other options
+        gallery: {
+            enabled: true
         }
-    })
-    // team carousel
-    $('.team-carousel').owlCarousel({
-        loop: true,
-        margin: 0,
-        autoplay: true,
-        // dots: true,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 3
-            }
-        }
-    })
-
-    // ========= scroll it =========================//
-    $.scrollIt({
-        topOffset: -50
     });
+
 
 
     //  ========== navbar colapse ================== //
@@ -104,35 +82,31 @@ $(document).ready(function () {
     })
 
 
-    $('.togle-theme').on('click', () => {
-        if ($('.togle-theme i').hasClass('fa-moon')) {
-            $('.togle-theme i').removeClass('fa-moon')
-            $('.togle-theme i').addClass('fa-sun')
 
-            document.querySelector('body').classList.toggle('dark')
-        } else {
-            document.querySelector('body').classList.toggle('dark')
-            $('.togle-theme i').removeClass('fa-sun')
-            $('.togle-theme i').addClass('fa-moon')
-        }
-    })
-
-
-    //  ============ AOS =================
+    //     //  ============ AOS =================
 
     $('.section-padding').attr('data-aos', 'fade-up')
     AOS.init({
         offset: 400,
         once: true,
-        duration: 1000,
+        duration: 500,
         delay: 100,
     })
+
+
+    // ========= scroll it =========================//
+    $.scrollIt({
+        topOffset: -200
+    });
+
 })
+// ========== END JQUERY ================= //
+
 
 // ========== TYPED.JS ================= //
-var typed2 = new Typed('#typing', {
-    strings: ['For Your Business'],
-    typeSpeed: 100,
-    backSpeed: 50,
+var typed2 = new Typed('.home-title', {
+    strings: ['KASUI'],
+    typeSpeed: 150,
+    backSpeed: 100,
     loop: true
-});
+})

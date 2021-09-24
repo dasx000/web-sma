@@ -5,7 +5,7 @@
 h1.title-h1 {
     font-size: 45px;
     font-weight: 700;
-    color: white;
+    color: black;
     padding: 0 0 20px;
 }
 
@@ -79,6 +79,13 @@ h1.title-h1 {
 p.para-b {
     color: var(--black-400);
     font-size: 16px;
+    font-weight: 100;
+    margin: 0;
+}
+
+p.para {
+    color: var(--black-400);
+    font-size: 16px;
     font-weight: 300;
     margin: 0;
 }
@@ -121,12 +128,12 @@ p.para-w {
 
 .section-title {
 
-    text-align: center;
+    padding: 30px;
 }
 
 .section-title h2 {
     font-size: 40px;
-    margin-bottom: 90px;
+    margin-bottom: 40px;
     color: var(--black-900);
     font-weight: 700;
     text-transform: capitalize;

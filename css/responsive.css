@@ -1,86 +1,77 @@
 /* mengatur responsive */
 @media screen and (max-width: 576px) {
-  .owl-carousel .owl-dots .owl-dot {
-    width: 8px;
-    height: 5px;
-    background-color: #a5a5a5;
-    display: inline-block;
-    margin-top: 4px;
-    border-radius: 5px;
-    margin-right: 3px;
+
+  .home-area .home-text h1 {
+
+    font-size: 40px;
+
   }
 
-  .owl-carousel .owl-dot.active {
-    width: 16px;
-    height: 5px;
-    background-color: var(--main-color);
+  .section-padding {
+
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 
-  /* end owl carousel */
 
-  /* text faq */
-  .faq .accordion-header h3 {
+  .section-title h2 {
+    font-size: 25px;
+
+  }
+
+  p.para-b {
+
     font-size: 14px;
+
   }
 
-  .faq .accordion-body p {
+  p.para-w {
+
     font-size: 14px;
+
   }
+
+
+  .galeri-area .button-group button+button {
+    margin-left: 1rem;
+  }
+
+  footer {
+    border-radius: 20px 20px 0 0;
+  }
+
 }
 
-/* @media only screen and (max-width: 800px) {} */
 
-/* @media screen and (max-width: 1199px) {
-  .img {
-    width: 500px;
-    z-index: -1;
-  }
+/* Tablet */
 
-}
-*/
+@media only screen and (max-width: 800px) {}
+
 
 @media screen and (max-width: 992px) {
-  .how-it-works-item.line-right::before {
-    display: none;
-  }
-
-  .navbar {
-    background-color: var(--main-color);
-  }
-
-  .navbar-toggler {
-    /* background-color: var(--dark-to-main-color); */
-    font-size: 16px;
-    height: 34px;
-    width: 44px;
-    padding: 0;
-    box-shadow: var(--shadow-black-100);
-  }
-
-  .navbar-toggler i {
-    font-size: 20px;
-    color: #ffffff;
-  }
-
   .navbar-area .navbar-collapse {
+    margin-top: 10px;
     border-radius: 10px;
-    box-shadow: var(--shadow-black-300);
+    box-shadow: var(--shadow-black-100);
+    background-color: #ffffff;
+    padding: 10px;
   }
 
-  .home .home-img .circle {
-    height: 320px;
-    width: 320px;
-
+  .nav-contact {
+    display: none
   }
 
-  .home .home-img .circle::before {
-    transform-origin: 142px 142px;
-    left: 18px;
-    top: 18px;
+  .navbar .navbar-nav .nav-item {
+    margin-left: 0px;
   }
 
-  .home .home-text h1 {
-    font-size: 27px;
+
+  .galeri-area .button-group button+button {
+    margin-left: 2rem;
+  }
+
+  footer {
+    border-radius: 40px 40px 0 0;
   }
 
 }
